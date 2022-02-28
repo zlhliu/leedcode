@@ -29,7 +29,8 @@ class Solution:
         L = len(arr)
         # 首先相乘
         # 二分
-        if bi.bisect(arr, m) == L*L and m != arr[L*L-1] or bi.bisect(arr, m) == 0:
+        a = ((bi.bisect(arr, m) == L and m != arr[L-1]) or bi.bisect(arr, m) == 0)
+        if (bi.bisect(arr, m) == L and m != arr[L - 1]) or bi.bisect(arr, m) == 0:
             return False
         else:
             return bi.bisect(arr, m)
@@ -39,4 +40,4 @@ class Solution:
 if __name__ == '__main__':
     a = [1, 6, 2, 9]
     b = Solution()
-    print(b.FourAddedNumEqualFind(7, a))
+    print(b.FourAddedNumEqualFind(24+1, a))
